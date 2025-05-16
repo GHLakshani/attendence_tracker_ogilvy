@@ -27,7 +27,7 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=ogilvy_db
 DB_USERNAME=root
-DB_PASSWORD=your_password
+DB_PASSWORD=
 
 php artisan key:generate
 
@@ -35,4 +35,7 @@ php artisan migrate --seed
 
 php artisan serve
 
+#url
+#http://127.0.0.1:8000
+#http://127.0.0.1:8000/attendance
 ```

@@ -11,7 +11,7 @@ class AttendanceController extends Controller
     public function showForm(Request $request)
     {
         $subjects = Subject::all();
-        $subjectId = $request->get('subject_id'); // ✅ capture selected subject
+        $subjectId = $request->get('subject_id');
 
         $students = collect(); // use empty collection by default
 

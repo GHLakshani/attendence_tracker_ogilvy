@@ -18,7 +18,7 @@ class StudentSeeder extends Seeder
             $student = Student::create([
                 'reg_no' => 'REG00' . $i,
                 'name' => 'Student ' . $i,
-                'nic' => '1990658781 ' . $i,
+                'nic' => '1990658781' . $i,
         ]);
 
         // Enroll each student in 3 random subjects

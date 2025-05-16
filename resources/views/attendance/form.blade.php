@@ -20,6 +20,10 @@
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
+  .response_msg {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+  }
 
   select, input[type="date"] {
     width: 100%;
@@ -97,6 +101,23 @@
 </form>
 
 @if(!empty($students) && $students->count())
+{{-- Flash message --}}
+@if(session('success'))
+    <div style="padding: 10px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; margin-bottom: 15px;" class="response_msg">
+        {{ session('success') }}
+    </div>
+@endif
+
+{{-- Validation errors --}}
+@if($errors->any())
+    <div style="padding: 10px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; margin-bottom: 15px;" class="response_msg">
+        <ul style="margin: 0; padding-left: 20px;">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form method="POST" action="{{ route('attendance.submit') }}">
   @csrf
   <input type="hidden" name="subject_id" value="{{ $subjectId }}">
